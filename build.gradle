@@ -30,7 +30,7 @@ repositories {
 }
 
 springBoot {
-    mainClassName = "com.itd.nk.NkApplication"
+    mainClassName = "de.kgrupp.rssupdateservice.RssUpdateServiceApplication"
 }
 
 bootJar {
