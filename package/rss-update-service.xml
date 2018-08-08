@@ -1,0 +1,8 @@
+<service>
+    <id>rss-update-service</id>
+    <name>RSS Update Service</name>
+    <description>RSS Update Service Windows Service</description>
+    <executable>java</executable>
+    <arguments>-jar "rss-update-service.jar"</arguments>
+    <logmode>rotate</logmode>
+</service>
