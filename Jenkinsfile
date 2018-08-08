@@ -20,7 +20,7 @@ node {
             zip archive: true, dir: 'package', glob: '', zipFile: "rss-update-service-${version}.zip"
         }
         stage('Archive') {
-            archiveArtifacts artifacts: 'package/*.zip'
+            archiveArtifacts artifacts: "rss-update-service-${version}.zip"
         }
     } catch (Throwable t) {
         throw t
