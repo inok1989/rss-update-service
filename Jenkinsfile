@@ -8,12 +8,10 @@ node {
         }
         stage('Build') {
             echo "My branch is: ${env.BRANCH_NAME}"
-            dir('app') {
-                withSonarQubeEnv('localhostSonarQube') {
-                    bat "gradlew.bat --info clean build bootJar sonarqube -PserverVersion=${version}"
-                }
-                currentBuild.description = version
+            withSonarQubeEnv('localhostSonarQube') {
+                bat "gradlew.bat --info clean build bootJar sonarqube -PserverVersion=${version}"
             }
+            currentBuild.description = version
         }
         stage('Bundle') {
             fileOperations([fileCopyOperation(excludes: '', flattenFiles: true, includes: 'build/libs/*.jar', targetLocation: 'package')])
