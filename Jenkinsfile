@@ -1,4 +1,6 @@
-String version = env.BRANCH_NAME + "." + env.BUILD_NUMBER
+def isRelease = env.TAG_NAME
+
+String version = "${env.BRANCH_NAME}${(isRelease ? ".${env.BUILD_NUMBER}" : '-SNAPSHOT')}"
 
 node {
     try {
