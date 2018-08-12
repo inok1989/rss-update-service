@@ -1,4 +1,4 @@
-package de.kgrupp.rssupdateservice;
+package de.kgrupp.ttrss.windowsupdateservice;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -22,7 +22,7 @@ import java.util.logging.Level;
 @Log
 public class ScheduledCalls {
 
-    @Value("${de.kgrupp.rss.update.service.url}")
+    @Value("${de.kgrupp.ttrss.windowsupdateservice.url}")
     private String url;
 
     @Autowired

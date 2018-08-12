@@ -18,11 +18,11 @@ node {
         stage('Bundle') {
             fileOperations([fileCopyOperation(excludes: '', flattenFiles: true, includes: 'build/libs/*.jar', targetLocation: 'package')])
             def jarFiles = findFiles(glob: 'package/*.jar')
-            fileOperations([fileRenameOperation(destination: 'package/rss-update-service.jar', source: "package/${jarFiles[0].name}")])
-            zip archive: true, dir: 'package', glob: '', zipFile: "rss-update-service-${version}.zip"
+            fileOperations([fileRenameOperation(destination: 'package/tt-rss-windows-update-service.jar', source: "package/${jarFiles[0].name}")])
+            zip archive: true, dir: 'package', glob: '', zipFile: "tt-rss-windows-update-service-${version}.zip"
         }
         stage('Archive') {
-            archiveArtifacts artifacts: "rss-update-service-${version}.zip"
+            archiveArtifacts artifacts: "tt-rss-windows-update-service-${version}.zip"
         }
     } catch (Throwable t) {
         throw t

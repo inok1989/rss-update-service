@@ -21,7 +21,7 @@ apply plugin: 'io.spring.dependency-management'
 
 def isRelease = project.hasProperty('buildRelease') && project.buildRelease == "true"
 
-group = 'de.kgrupp.rssupdateservice'
+group = 'de.kgrupp.ttrss.windowsupdateservice'
 version = !project.hasProperty('serverVersion') ? 'LOCAL-VERSION-SNAPSHOT' : (project.serverVersion + (isRelease ? "" : "-SNAPSHOT"))
 sourceCompatibility = 10
 
@@ -33,7 +33,7 @@ repositories {
 }
 
 springBoot {
-    mainClassName = "de.kgrupp.rssupdateservice.RssUpdateServiceApplication"
+    mainClassName = "de.kgrupp.ttrss.windowsupdateservice.TtRssUpdateWindowsServiceApplication"
 }
 
 bootJar {
