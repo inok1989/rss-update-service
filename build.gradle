@@ -33,7 +33,7 @@ repositories {
 }
 
 springBoot {
-    mainClassName = "de.kgrupp.ttrss.windowsupdateservice.TtRssUpdateWindowsServiceApplication"
+    mainClassName = "de.kgrupp.ttrss.windowsupdateservice.TtRssWindowsUpdateServiceApplication"
 }
 
 bootJar {
