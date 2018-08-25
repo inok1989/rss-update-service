@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/kgrupp/tt-rss-windows-update-service.svg?branch=master)](https://travis-ci.org/kgrupp/tt-rss-windows-update-service)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=tt-rss-windows-update-service&metric=alert_status)](https://sonarcloud.io/dashboard?id=tt-rss-windows-update-service)
+
 # Tiny Tiny RSS Windows Update Service
 
 A small windows service to trigger update on a [Tiny Tiny RSS server](https://tt-rss.org).
