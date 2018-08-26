@@ -53,6 +53,9 @@ public class ScheduledCalls {
         Future<HttpResponse<String>> stringFuture = Unirest.get(url).asStringAsync();
         for (long i = 0; i < 100; i++) {
             Thread.sleep(100);
+            if (stringFuture.isDone() || stringFuture.isCancelled()) {
+                break;
+            }
             final long finalI = i;
             log.info(() -> "waiting " + (finalI * 100D) / 1000 + " seconds");
         }
@@ -65,7 +68,7 @@ public class ScheduledCalls {
         } else if (stringFuture.isCancelled()) {
             log.severe(() -> "Call is cancelled");
         } else {
-            log.severe(() -> "Invalid state.");
+            log.severe(() -> "Timeout after 10 seconds");
         }
         return result;
     }
