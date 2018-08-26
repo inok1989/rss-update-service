@@ -37,8 +37,11 @@ public class ScheduledCalls {
             if (0 < result.getNumUpdated()) {
                 try {
                     triggerUpdate();
-                } catch (InterruptedException | ExecutionException e) {
+                } catch (ExecutionException e) {
                     log.log(Level.SEVERE, e, () -> "Failed with exception");
+                } catch (InterruptedException e) {
+                    log.log(Level.SEVERE, e, () -> "Interrupted execution");
+                    Thread.currentThread().interrupt();
                 }
             }
         });
